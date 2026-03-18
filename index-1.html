@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aura Industries – Manufacturing & International Trade</title>
+<meta name="description" content="Aura Industries – Tiruchirappalli, India. Solar energy equipment, metal manufacturing, telecom installation, and international wholesale trade. IEC: APMPD6852L"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink:    #0d1117;
+    --deep:   #111820;
+    --panel:  #161e27;
+    --border: #1f2d3a;
+    --gold:   #c9a84c;
+    --gold2:  #e8c96a;
+    --muted:  #6b8099;
+    --light:  #d4dfe8;
+    --white:  #f0f4f8;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--light);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px;
+    height: 68px;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.15rem; font-weight: 700; letter-spacing: 0.18em;
+    color: var(--gold); text-decoration: none; text-transform: uppercase;
+  }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
+      linear-gradient(160deg, #0d1117 0%, #0f1a24 50%, #0d1117 100%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  }
+  .hero-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 24px; position: relative;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .hero-tag::before {
+    content: ''; display: block; width: 40px; height: 1px; background: var(--gold);
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 300; line-height: 0.95;
+    color: var(--white); letter-spacing: -0.02em;
+    position: relative; margin-bottom: 32px;
+  }
+  .hero-title em {
+    font-style: normal; color: var(--gold); font-weight: 600;
+  }
+  .hero-sub {
+    max-width: 520px; font-size: 1rem; color: var(--muted);
+    line-height: 1.8; position: relative; margin-bottom: 48px;
+  }
+  .hero-ctas { display: flex; gap: 16px; position: relative; }
+  .btn-primary {
+    padding: 14px 32px;
+    background: var(--gold); color: var(--ink);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; text-decoration: none;
+    border: none; cursor: pointer; transition: background 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); }
+  .btn-outline {
+    padding: 14px 32px;
+    background: transparent; color: var(--light);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; text-decoration: none;
+    border: 1px solid var(--border); cursor: pointer;
+    transition: border-color 0.25s, color 0.25s, transform 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+  .hero-stats {
+    position: absolute; right: 80px; bottom: 80px;
+    display: flex; flex-direction: column; gap: 32px; align-items: flex-end;
+  }
+  .stat-item { text-align: right; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 600; color: var(--gold); line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--muted); margin-top: 4px;
+  }
+
+  /* ── SECTIONS ── */
+  section { padding: 100px 80px; }
+  .sec-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem; font-weight: 600; letter-spacing: 0.3em;
+    text-transform: uppercase; color: var(--gold);
+    display: flex; align-items: center; gap: 14px; margin-bottom: 20px;
+  }
+  .sec-label::after { content: ''; flex: 1; max-width: 60px; height: 1px; background: var(--gold); }
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem); font-weight: 300;
+    color: var(--white); line-height: 1.15; margin-bottom: 20px;
+  }
+  .sec-title strong { font-weight: 700; color: var(--gold); }
+  .sec-body { max-width: 580px; color: var(--muted); line-height: 1.85; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--deep); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: start; margin-top: 60px;
+  }
+  .about-detail { border-left: 2px solid var(--border); padding-left: 28px; margin-bottom: 32px; }
+  .about-detail-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
+  }
+  .about-detail-val { font-size: 0.95rem; color: var(--light); }
+  .about-right p { color: var(--muted); margin-bottom: 20px; line-height: 1.9; }
+
+  /* ── SERVICES ── */
+  #services { background: var(--ink); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 60px;
+  }
+  .service-card {
+    background: var(--panel); padding: 44px 36px;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.06), transparent);
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .service-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+  .service-card:hover::before { opacity: 1; }
+  .service-icon {
+    font-size: 2rem; margin-bottom: 24px; display: block;
+    filter: grayscale(0.3);
+  }
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; font-weight: 600; color: var(--border);
+    letter-spacing: 0.1em; margin-bottom: 12px;
+  }
+  .service-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.25rem; font-weight: 700; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--white); margin-bottom: 16px;
+  }
+  .service-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+  .service-codes {
+    margin-top: 20px; font-size: 0.72rem;
+    font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.1em;
+    color: var(--gold); opacity: 0.7;
+  }
+
+  /* ── TRADE ── */
+  #trade { background: var(--deep); }
+  .trade-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center; margin-top: 60px;
+  }
+  .trade-markets { display: flex; flex-direction: column; gap: 4px; margin-top: 28px; }
+  .trade-market {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+  }
+  .market-name { font-size: 0.9rem; color: var(--light); font-weight: 500; }
+  .market-tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; padding: 4px 10px;
+    border: 1px solid var(--border); color: var(--muted);
+  }
+  .market-tag.active { border-color: var(--gold); color: var(--gold); }
+  .credentials-box {
+    background: var(--panel); padding: 40px;
+    border: 1px solid var(--border);
+  }
+  .cred-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  }
+  .cred-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+  }
+  .cred-row:last-child { border-bottom: none; }
+  .cred-key { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.06em; }
+  .cred-val { font-size: 0.82rem; color: var(--light); font-weight: 500; font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.05em; }
+
+  /* ── SEPA ── */
+  #sepa { background: var(--ink); }
+  .sepa-strip {
+    margin-top: 60px;
+    border: 1px solid var(--border); padding: 48px;
+    background: linear-gradient(135deg, var(--panel) 0%, rgba(201,168,76,0.04) 100%);
+    position: relative; overflow: hidden;
+  }
+  .sepa-strip::after {
+    content: 'SEPA'; position: absolute;
+    right: -20px; top: 50%; transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 9rem; font-weight: 700;
+    color: rgba(201,168,76,0.04); pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+  .sepa-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 48px; }
+  .sepa-item h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 12px;
+  }
+  .sepa-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--deep); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    margin-top: 60px;
+  }
+  .contact-block { margin-bottom: 32px; }
+  .contact-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+  }
+  .contact-val { font-size: 1rem; color: var(--light); }
+  .contact-val a { color: var(--light); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; }
+  .contact-val a:hover { color: var(--gold); border-color: var(--gold); }
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .contact-form input,
+  .contact-form textarea {
+    background: var(--panel); border: 1px solid var(--border);
+    color: var(--light); padding: 14px 18px;
+    font-family: 'Barlow', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.25s; resize: none;
+    width: 100%;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--gold); }
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: var(--muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); border-top: 1px solid var(--border);
+    padding: 36px 80px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem; font-weight: 700; letter-spacing: 0.2em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .footer-reg {
+    font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em;
+    line-height: 1.8; text-align: center;
+  }
+  .footer-copy { font-size: 0.72rem; color: var(--muted); }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    #hero { padding: 0 24px 60px; }
+    .hero-stats { display: none; }
+    section { padding: 72px 24px; }
+    .about-grid, .trade-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .sepa-cols { grid-template-columns: 1fr; gap: 28px; }
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 28px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">Aura Industries</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#trade">Export &amp; Trade</a></li>
+    <li><a href="#sepa">International Payments</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-tag">Tiruchirappalli, Tamil Nadu — India</div>
+  <h1 class="hero-title">
+    Manufacturing<br/>
+    <em>&amp; International</em><br/>
+    Trade
+  </h1>
+  <p class="hero-sub">
+    Aura Industries is an MSME-registered manufacturing and export enterprise specialising in solar energy systems, metal engineering, telecom infrastructure, and wholesale international trade.
+  </p>
+  <div class="hero-ctas">
+    <a href="#contact" class="btn-primary">Request a Quote</a>
+    <a href="https://buy.stripe.com/aEU5n31Ef08NgIo8wO" target="_blank" class="btn-outline">Pre-Book Bulk Order</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Employees</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3+</div>
+      <div class="stat-label">Years Active</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">IEC</div>
+      <div class="stat-label">Licensed Exporter</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="sec-label">Who We Are</div>
+    <h2 class="sec-title">Rooted in Tamil Nadu.<br/><strong>Trading with the World.</strong></h2>
+    <p class="sec-body">Aura Industries was established in 2022 as a proprietorship by Deepa Shanmugasundaram in Tiruchirappalli, Tamil Nadu. Registered under India's MSME framework, the company operates across manufacturing, import/export, and wholesale trade sectors.</p>
+  </div>
+  <div class="about-grid reveal">
+    <div>
+      <div class="about-detail">
+        <div class="about-detail-label">Legal Name</div>
+        <div class="about-detail-val">Aura Industries</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Constitution</div>
+        <div class="about-detail-val">Proprietorship</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Proprietor</div>
+        <div class="about-detail-val">Deepa Shanmugasundaram</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">GST Registration No.</div>
+        <div class="about-detail-val">33APMPD6852L1ZL</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Import–Export Code (IEC)</div>
+        <div class="about-detail-val">APMPD6852L</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Udyam Registration</div>
+        <div class="about-detail-val">UDYAM-TN-27-0041493</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Classification</div>
+        <div class="about-detail-val">Micro Enterprise – OBC Category</div>
+      </div>
+      <div class="about-detail">
+        <div class="about-detail-label">Established</div>
+        <div class="about-detail-val">October 2022</div>
+      </div>
+    </div>
+    <div class="about-right">
+      <p>Aura Industries is a government-registered, IEC-licensed enterprise authorised to conduct international import and export operations. The company is listed under Gentian Solarcomtech Private Limited's MSME registration covering multiple business units.</p>
+      <p>Our operations span solar energy equipment manufacturing, precision metal fabrication, telecom infrastructure installation, and international wholesale distribution of agricultural commodities and industrial goods.</p>
+      <p>We serve buyers and suppliers across India, the European Union, and the United Arab Emirates, with EUR-denominated international payments processed through SEPA banking infrastructure.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <div class="sec-label">What We Do</div>
+    <h2 class="sec-title">Business <strong>Activities</strong></h2>
+  </div>
+  <div class="services-grid reveal">
+
+    <div class="service-card">
+      <span class="service-icon">☀️</span>
+      <div class="service-num">01</div>
+      <div class="service-name">Solar Energy Systems</div>
+      <div class="service-desc">Design, manufacture, and supply of solar power generation equipment including panels, mounting structures, and complete solar installations for residential and commercial applications.</div>
+      <div class="service-codes">NIC 35105 — Solar Power Generation</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🔩</span>
+      <div class="service-num">02</div>
+      <div class="service-name">Metal Fabrication</div>
+      <div class="service-desc">Manufacture of cast-iron and cast-steel pipes, tubes, hollow profiles, and pipe fittings for industrial, infrastructure, and construction applications.</div>
+      <div class="service-codes">NIC 24311 — Pipes, Tubes &amp; Fittings</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">📡</span>
+      <div class="service-num">03</div>
+      <div class="service-name">Telecom Installation</div>
+      <div class="service-desc">Installation of telecommunications wiring, computer network infrastructure, fibre optic cabling, satellite dishes, and cable television systems.</div>
+      <div class="service-codes">NIC 43212 — Telecom &amp; Network Wiring</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🌾</span>
+      <div class="service-num">04</div>
+      <div class="service-name">Agricultural Wholesale</div>
+      <div class="service-desc">Wholesale trade in sugarcane, edible oils, processed spices, and other agricultural commodities. Competitive pricing with volume discounts for bulk and international orders.</div>
+      <div class="service-codes">NIC 46208 · 46305 — Wholesale Trade</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🚢</span>
+      <div class="service-num">05</div>
+      <div class="service-name">Import &amp; Export</div>
+      <div class="service-desc">Fully licensed import-export operations under IEC APMPD6852L. Sourcing, procurement, customs clearance, and logistics management for international trade across India, EU, and UAE corridors.</div>
+      <div class="service-codes">DGFT Licensed — IEC APMPD6852L</div>
+    </div>
+
+    <div class="service-card">
+      <span class="service-icon">🤝</span>
+      <div class="service-num">06</div>
+      <div class="service-name">Commission Agency</div>
+      <div class="service-desc">Acting as commission agent and trade intermediary for wholesale buyers and sellers in emerging markets. End-to-end deal facilitation, documentation, and settlement services.</div>
+      <div class="service-codes">NIC 46109 — Commission Agents</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TRADE -->
+<section id="trade">
+  <div class="trade-grid">
+    <div class="reveal">
+      <div class="sec-label">Export &amp; Trade</div>
+      <h2 class="sec-title">Global<br/><strong>Trade Corridors</strong></h2>
+      <p class="sec-body">Aura Industries conducts international trade with buyers and suppliers across three key regions. All cross-border transactions are fully documented against commercial invoices, purchase orders, and shipping records.</p>
+      <div class="trade-markets">
+        <div class="trade-market">
+          <span class="market-name">🇮🇳 India — Domestic</span>
+          <span class="market-tag active">INR · Active</span>
+        </div>
+        <div class="trade-market">
+          <span class="market-name">🇪🇺 European Union — SEPA Zone</span>
+          <span class="market-tag active">EUR · SEPA Active</span>
+        </div>
+        <div class="trade-market">
+          <span class="market-name">🇦🇪 United Arab Emirates — Dubai</span>
+          <span class="market-tag active">USD · Active</span>
+        </div>
+        <div class="trade-market">
+          <span class="market-name">🌐 Other International Markets</span>
+          <span class="market-tag">USD · SWIFT</span>
+        </div>
+      </div>
+    </div>
+    <div class="credentials-box reveal">
+      <div class="cred-title">Regulatory Credentials</div>
+      <div class="cred-row">
+        <span class="cred-key">Import–Export Code</span>
+        <span class="cred-val">APMPD6852L</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">IEC Issuing Authority</span>
+        <span class="cred-val">DGFT, Chennai</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">IEC Issue Date</span>
+        <span class="cred-val">15 March 2023</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">GST Number</span>
+        <span class="cred-val">33APMPD6852L1ZL</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">GST Jurisdiction</span>
+        <span class="cred-val">Srirangam, Tamil Nadu</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">Udyam Number</span>
+        <span class="cred-val">UDYAM-TN-27-0041493</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">Enterprise Type</span>
+        <span class="cred-val">Micro — MSME Registered</span>
+      </div>
+      <div class="cred-row">
+        <span class="cred-key">State</span>
+        <span class="cred-val">Tamil Nadu, India</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEPA -->
+<section id="sepa">
+  <div class="reveal">
+    <div class="sec-label">International Payments</div>
+    <h2 class="sec-title">SEPA-Enabled<br/><strong>EUR Transactions</strong></h2>
+    <p class="sec-body">Aura Industries accepts EUR payments from European buyers through SEPA Credit Transfer (SCT) and SEPA Direct Debit (SDD) payment infrastructure, enabling smooth trade settlement with EU/EEA counterparties.</p>
+  </div>
+  <div class="sepa-strip reveal">
+    <div class="sepa-cols">
+      <div class="sepa-item">
+        <h4>SEPA Credit Transfer</h4>
+        <p>Receive EUR payments directly from EU/EEA buyers via SEPA SCT. Fast, low-cost settlement for export invoices. IBAN-referenced transfers linked to commercial documentation.</p>
+      </div>
+      <div class="sepa-item">
+        <h4>SEPA Direct Debit</h4>
+        <p>Pre-authorised EUR collections from European buyers under signed SEPA Core or B2B mandates. Ideal for recurring supply contracts and ongoing wholesale relationships.</p>
+      </div>
+      <div class="sepa-item">
+        <h4>USD SWIFT Transfers</h4>
+        <p>Standard SWIFT wire transfers in USD for trade with UAE (Dubai) and other non-SEPA international markets. Full invoice and shipping documentation provided for every transaction.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="sec-label">Get In Touch</div>
+      <h2 class="sec-title">Bulk Orders &amp;<br/><strong>Trade Enquiries</strong></h2>
+      <p class="sec-body" style="margin-bottom:48px;">For bulk purchase inquiries, export orders, import sourcing, or trade partnership discussions, reach us directly.</p>
+
+      <div class="contact-block">
+        <div class="contact-label">Email</div>
+        <div class="contact-val"><a href="mailto:gentianpvtltd@gmail.com">gentianpvtltd@gmail.com</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-label">Phone &amp; WhatsApp</div>
+        <div class="contact-val"><a href="tel:+917540008408">+91 7540 008 408</a></div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-label">Registered Address</div>
+        <div class="contact-val">Door No. 5/361C, Periyar Salai,<br/>Dheeran Nagar, Tiruchirappalli,<br/>Tamil Nadu – 620001, India</div>
+      </div>
+      <div class="contact-block" style="margin-top:36px;">
+        <div class="contact-label">Pre-Book a Bulk Order</div>
+        <a href="https://buy.stripe.com/aEU5n31Ef08NgIo8wO" target="_blank" class="btn-primary" style="margin-top:12px; display:inline-block;">Place Pre-Order →</a>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <input type="text" placeholder="Your Name" required/>
+        <input type="email" placeholder="Business Email" required/>
+        <input type="text" placeholder="Company Name"/>
+        <input type="text" placeholder="Country"/>
+        <textarea rows="5" placeholder="Describe your requirement (product, quantity, destination)..." required></textarea>
+        <button type="submit" class="btn-primary" style="cursor:pointer; border:none;">Send Enquiry →</button>
+        <p id="form-msg" style="font-size:0.82rem; color: var(--gold); display:none; margin-top:8px;">✓ Thank you! We will respond within 24 hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Aura Industries</div>
+  <div class="footer-reg">
+    GST: 33APMPD6852L1ZL &nbsp;|&nbsp; IEC: APMPD6852L &nbsp;|&nbsp; Udyam: UDYAM-TN-27-0041493<br/>
+    Door No. 5/361C, Dheeran Nagar, Tiruchirappalli, Tamil Nadu – 620001, India
+  </div>
+  <div class="footer-copy">© 2025 Aura Industries</div>
+</footer>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Form handler
+function handleForm(e) {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  msg.style.display = 'block';
+  e.target.querySelectorAll('input, textarea, button').forEach(el => el.disabled = true);
+}
+</script>
+</body>
+</html>
